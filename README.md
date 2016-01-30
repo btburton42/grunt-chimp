@@ -1,3 +1,7 @@
+## > NOTE: BREAKING CHANGES
+
+Due to node changing how it's dependencies are managed, there is a breaking change in the grunt task needed to access the binary. In short, if you are using a `<3.0` version of node you will want to stick with `v1.0`. If you are using node's rewritted flat-dependency installer you'll want to use `v2.0`. In the future, I may add support for both, but not as of yet.
+
 # grunt-chimp
 
 > A grunt plugin for interacting with the Chimp BDD library
