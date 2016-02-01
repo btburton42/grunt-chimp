@@ -1,3 +1,7 @@
+## NOTE: BREAKING CHANGES for v2
+
+Due to node changing how it's dependencies are managed, there is a breaking change in the grunt task needed to access the binary. In short, if you are using a `<3.0` version of npm you will want to stick with `v1.0`. If you are using node's rewritten flat-dependency installer that's been upstreamed as of `v5.0` of node, you'll want to use `v2.0`. 
+
 # grunt-chimp
 
 > A grunt plugin for interacting with the Chimp BDD library
@@ -86,4 +90,7 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+`v1` - supports npm `<=v3`
+
+`v2` - supports npm `>=v3`
