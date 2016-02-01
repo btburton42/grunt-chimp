@@ -1,7 +1,7 @@
 {
   "name": "grunt-chimp",
   "description": "A grunt plugin for interacting with the Chimp BDD library",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/tyler.burton/grunt-chimp",
   "author": {
     "name": "Tyler Burton",
@@ -20,7 +20,7 @@
       "url": "https://github.com/tyler.burton/grunt-chimp/blob/master/LICENSE-MIT"
     }
   ],
-  "engineStrict" : true,
+  "engineStrict": true,
   "engines": {
     "node": ">= 5.0.0"
   },
