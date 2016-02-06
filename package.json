@@ -1,7 +1,7 @@
 {
   "name": "grunt-chimp",
   "description": "A grunt plugin for interacting with the Chimp BDD library",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "homepage": "https://github.com/tyler.burton/grunt-chimp",
   "author": {
     "name": "Tyler Burton",
