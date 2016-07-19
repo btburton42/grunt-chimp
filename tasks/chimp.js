@@ -24,10 +24,6 @@ module.exports = function(grunt) {
     var chimpBin = path.resolve(process.cwd() + '/node_modules/.bin/chimp');
     var args = [];
 
-    if (options.path) {
-      args.push(options.path);
-    }
-
     for (var option in options) {
       args.push('--' + option + '=' + options[option]);
     }
