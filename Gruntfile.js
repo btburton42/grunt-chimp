@@ -30,9 +30,16 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     chimp: {
-      default: {
+      cucumber: {
         options: {
           path: 'example/features',
+          browser: 'firefox'
+        }
+      },
+      mocha: {
+        options: {
+          mocha: true,
+          path: 'example/specs',
           browser: 'firefox'
         }
       }
@@ -55,7 +62,8 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'chimp', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'chimp:cucumber', 'nodeunit']);
+  grunt.registerTask('test:mocha', ['clean', 'chimp:mocha', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
