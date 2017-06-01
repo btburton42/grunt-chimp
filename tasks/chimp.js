@@ -20,8 +20,12 @@ module.exports = function(grunt) {
     // Make this task async
     var done = this.async();
     var options = this.options();
+    var chimpExecutable = '/node_modules/.bin/chimp';
+    if (process.platform === 'win32') {
+        chimpExecutable += '.cmd';
+    }
 
-    var chimpBin = path.resolve(process.cwd() + '/node_modules/.bin/chimp');
+    var chimpBin = path.resolve(process.cwd() + chimpExecutable);
     var args = [];
 
     for (var option in options) {
