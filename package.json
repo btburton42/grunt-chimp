@@ -2,22 +2,22 @@
   "name": "grunt-chimp",
   "description": "A grunt plugin for interacting with the Chimp BDD library",
   "version": "2.1.0",
-  "homepage": "https://github.com/tyler.burton/grunt-chimp",
+  "homepage": "https://github.com/btburton42/grunt-chimp",
   "author": {
     "name": "Tyler Burton",
     "email": "btburton42@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tyler.burton/grunt-chimp.git"
+    "url": "git://github.com/btburton42/grunt-chimp.git"
   },
   "bugs": {
-    "url": "https://github.com/tyler.burton/grunt-chimp/issues"
+    "url": "https://github.com/btburton42/grunt-chimp/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/tyler.burton/grunt-chimp/blob/master/LICENSE-MIT"
+      "url": "https://github.com/btburton42/grunt-chimp/blob/master/LICENSE-MIT"
     }
   ],
   "engineStrict": true,
