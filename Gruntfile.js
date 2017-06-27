@@ -33,7 +33,12 @@ module.exports = function(grunt) {
       cucumber: {
         options: {
           path: 'example/features',
-          browser: 'firefox'
+          browser: 'firefox',
+          // Reference: https://github.com/cucumber/cucumber/wiki/Tags
+          // JSON.stringify b/c the chimp module recieves formatted strings
+          // so by default we get "@iShouldrunSuccesfully,@orIshouldRunSuccesfully,@becauseIAmHere,~@iWontRun"
+          // which chains together as a string and runs all of the below as an OR conditional
+          tags: JSON.stringify(['@iShouldRunSuccesfully,@orIShouldRunSuccesfully', '@becauseIAmHere', '~@iWontRun'])
         }
       },
       mocha: {

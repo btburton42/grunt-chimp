@@ -13,6 +13,20 @@ module.exports = function(grunt) {
   var path = require('path');
   var spawn = require('child_process').spawn;
 
+  /**
+   * Simple check to see if the input is a json type
+   * @param str
+   * @returns {boolean}
+   */
+  var isJSON = function isJson(str) {
+    try {
+      JSON.parse(str);
+    } catch (e) {
+      return false;
+    }
+    return true;
+  };
+
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
@@ -29,7 +43,21 @@ module.exports = function(grunt) {
     var args = [];
 
     for (var option in options) {
-      args.push('--' + option + '=' + options[option]);
+      if (isJSON(options[option])) {
+        var parsedOptions = JSON.parse(options[option]);
+        // If the option that was passed in was an array, we want to treat each argument seperately
+        // eg, for tags we want --tags=@tagname --tags=@tagname2; not: --tags=@tagname,@tagname2
+        // (cucumber cares -- https://github.com/cucumber/cucumber/wiki/Tags )
+        if(Array.isArray(parsedOptions)) {
+          parsedOptions.forEach((parsedOption) => args.push('--' + option + '=' + parsedOption));
+        }
+        else {
+          args.push('--' + option + '=' + options[option]);
+        }
+      }
+      else {
+        args.push('--' + option + '=' + options[option]);
+      }
     }
 
     var chimp = spawn(chimpBin, args);
